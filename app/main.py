@@ -11,4 +11,23 @@ def speak(text):
     tts.save(filename)
     playsound.playsound(filename)
 
-speak('hello Laia how are you ')
+def get_audio():
+    reconizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        audio = reconizer.listen(source)
+        said = ''
+
+        try:
+            said = reconizer.recognize_google(audio)
+            print(said)
+        except Exception as e:
+            print('Exception: ' + str(e))
+    
+    return said
+
+
+
+
+
+speak('hello')
+get_audio()
