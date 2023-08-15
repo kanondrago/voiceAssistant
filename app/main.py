@@ -26,8 +26,13 @@ def get_audio():
     return said
 
 
+text = get_audio()
 
+if 'hello' in text:
+    speak('hello, how are you ?')
 
+if 'what is your name' in text:
+    speak('My name is Lily')
 
-speak('hello')
-get_audio()
+if "what's your name" in text:
+    speak('My name is Lily')
